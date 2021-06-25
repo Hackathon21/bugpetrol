@@ -6,5 +6,18 @@ def homepage(request):
     return render(request,'index.html')
 
 # -------------------------------------------------------------------------------------------------------------------------------------
-# login
+# about
+ 
+def about(request):
+    return render(request,'about.html')
 
+#--------------------------------------------------------------------------------------------------------------------------------------
+# 
+# def about(request):
+#     return render(request,'about.html')
+
+# def about(request):
+#     return render(request,'about.html')
+
+# def about(request):
+#     return render(request,'about.html')
