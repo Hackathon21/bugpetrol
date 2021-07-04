@@ -1,99 +1,62 @@
-{% load static %}      
+{% load static %}
+
 <!DOCTYPE html>
+<html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>login</title>   
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css\login.css' %}">   
-		{% comment %} <script src="{% static 'js/login.js' %}"></script>  {% endcomment %}
-		<script>
-		 function changeToSignUp(){
-			 container.classList.add("right-panel-active");
-		 }
-		 function changeToSignIn(){
-			 container.classList.remove("right-panel-active");
-		 }
-		</script>
-    </head>
-    <body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-5">
-        <a class="navbar-brand" style="font-size: 20px !important;" href="homepage">Health Pro+</a>
-        <button class="navbar-toggler btn-lg" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="Specializations" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about/">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="login/">Login</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="Sign In/ Sign Up" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-              </ul>
-          
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/back-to-top-scroll-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/back-to-top-scroll.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Bold-BS4-Animated-Back-To-Top.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'css/Login-Form-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Pretty-Registration-Form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Sidebar-Menu-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Sidebar-Menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head> 
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md sticky-top bg-primary">
+        <div class="container-fluid" width="30px" height="30px" alt="10px">
+        <a class="navbar-brand text-center" href="{% url 'homepage' %}" style="margin: 0px 0px;">HOSPITAL SYSTEM</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav text-light ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'homepage' %}">HOME</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'aboutpage' %}">ABOUT</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'loginpage' %}">LOGIN</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'createaccount' %}">CREATE ACCOUNT</a></li>
+                </ul>
         </div>
-      </nav>
-       
-      
-      <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
-        <strong></strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-       
-        <div class="container" id="container">
-		<div class="form-container sign-up-container">
-		<form action="#">
-			<h1>Create Account</h1>
-			
-			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="text" placeholder="Gender" />
-			<input type="text" placeholder="phone no." />
-			<input type="text" placeholder="age" />
-			<input type="text" placeholder="blood group" />
-			
+        </div>
+    </nav>
+    <div class="login-dark">
+        <form method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Log In</button>
+            </div>
+            <a class="forgot" href="#">New user? Create Account</a></form>
+    </div>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/js/back-to-top-scroll.js"></script>
+    <script src="static/js/Bold-BS4-Animated-Back-To-Top.js"></script>
+    <script src="static/js/bs-init.js"></script>
+    <script src="static/js/Sidebar-Menu.js"></script>
+</body>
 
-			<button>Sign Up</button>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form action="#">
-			<h1>Sign in</h1>
-			
-			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button click = "hospital_appointment\home\templates\createaccount.html">Sign In</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn" onclick="changeToSignIn()">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>A doctor at the comfort of your home at the earliest</p>
-				<button class="ghost" id="signUp" onclick="changeToSignUp()">Sign Up</button>
-			</div>
-		</div>
-	</div>
-        <script src="{% static '/js/script.js' %}" async defer></script>
-    </body>
 </html>

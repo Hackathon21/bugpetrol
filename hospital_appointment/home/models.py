@@ -9,7 +9,6 @@ class Patient(models.Model):
     email = models.EmailField(unique=True)
     gender = models.CharField( max_length=50)
     phone = models.CharField( max_length=50)
-    age = models.CharField(max_length=50)
     bloodgroup = models.CharField(max_length=50)
     address = models.CharField( max_length=150)
     def __str__(self):
